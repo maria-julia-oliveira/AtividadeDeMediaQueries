@@ -3,49 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purple Pet - Estética & Cuidado</title>
+    <title>Amigo Peludo - Pet Shop & Spa</title>
     <style>
-        /* Variáveis de Cores (Paleta Roxa) */
-        :root {
-            --primary: #6c5ce7;    /* Roxo Vibrante */
-            --secondary: #a29bfe;  /* Roxo Suave */
-            --dark: #2d3436;       /* Cinza Escuro */
-            --accent: #ef83ff;     /* Rosa/Roxo para Destaque */
-            --bg-light: #f9f8ff;   /* Fundo levemente arroxeado */
-        }
-
+        /* Configurações Globais */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff9f43;
+            --secondary: #54a0ff;
+            --dark: #2f3542;
+            --light: #f1f2f6;
         }
 
         body {
-            background-color: var(--bg-light);
+            background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
 
-        /* Header */
+        /* Header e Navegação */
         header {
-            background-color: #fff;
+            background-color: white;
             padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid var(--primary);
             position: sticky;
             top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
 
         .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
+            font-size: 1.5rem;
+            font-weight: bold;
             color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: -1px;
         }
 
         nav ul {
@@ -53,24 +50,28 @@
             list-style: none;
         }
 
-        nav ul li { margin-left: 25px; }
+        nav ul li {
+            margin-left: 20px;
+        }
 
         nav ul li a {
             text-decoration: none;
             color: var(--dark);
-            font-weight: 600;
+            font-weight: 500;
             transition: 0.3s;
         }
 
-        nav ul li a:hover { color: var(--primary); }
+        nav ul li a:hover {
+            color: var(--primary);
+        }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(108, 92, 231, 0.9), rgba(162, 155, 254, 0.8)), 
-                        url('https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=1000');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1000');
             background-size: cover;
             background-position: center;
-            height: 70vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -81,141 +82,162 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
         }
 
         .btn {
-            background-color: white;
-            color: var(--primary);
-            padding: 15px 40px;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 25px;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: 0.3s;
+            transition: transform 0.3s;
         }
 
         .btn:hover {
-            background-color: var(--accent);
-            color: white;
-            transform: translateY(-3px);
+            transform: scale(1.05);
         }
 
-        /* Seção de Serviços */
+        /* Serviços */
         .services {
-            padding: 5rem 5%;
+            padding: 4rem 5%;
             text-align: center;
         }
 
         .services h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
         }
 
         .grid-services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
         .card {
             background: white;
-            padding: 3rem 2rem;
-            border-radius: 20px;
-            border-bottom: 5px solid var(--secondary);
-            transition: 0.4s;
-            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .card:hover {
-            border-bottom-color: var(--accent);
             transform: translateY(-10px);
         }
 
-        .card-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+        .card i {
+            font-size: 3rem;
             display: block;
-        }
-
-        .card h3 {
-            color: var(--primary);
             margin-bottom: 1rem;
         }
 
-        /* Footer */
+        /* Rodapé */
         footer {
-            background-color: var(--primary);
+            background-color: var(--dark);
             color: white;
             text-align: center;
-            padding: 3rem;
+            padding: 2rem;
+            margin-top: 2rem;
         }
 
-        /* --- MEDIA QUERIES --- */
+        /* --- MEDIA QUERIES (Responsividade) --- */
 
-        /* Tablets */
+        /* Tablets e Telas Médias */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            header { padding: 1.5rem; }
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
         }
 
         /* Celulares */
         @media (max-width: 480px) {
-            header { flex-direction: column; }
-            nav ul { margin-top: 15px; }
-            nav ul li { margin: 0 10px; }
-            .hero h1 { font-size: 1.8rem; }
-            .hero { height: 60vh; }
-            .card { padding: 2rem 1.5rem; }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .hero {
+                height: 50vh;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-services {
+                grid-template-columns: 1fr; /* Força uma coluna no celular */
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">🟣 PurplePet</div>
+        <div class="logo">🐾 Amigo Peludo</div>
         <nav>
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Agendar</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Carinho Real para o seu Pet</h1>
-        <p style="margin-bottom: 2rem; font-size: 1.2rem;">Onde o bem-estar e a diversão se encontram.</p>
-        <a href="#" class="btn">Conhecer o Spa</a>
+    <section class="hero" id="home">
+        <h1>O melhor cuidado para o seu melhor amigo.</h1>
+        <p style="margin-bottom: 2rem;">Banho, tosa e muito carinho em um só lugar.</p>
+        <a href="#" class="btn">Agendar Horário</a>
     </section>
 
-    <section class="services">
-        <h2>Nossos Diferenciais</h2>
+    <section class="services" id="servicos">
+        <h2>Nossos Serviços</h2>
         <div class="grid-services">
             <div class="card">
-                <span class="card-icon">🐕</span>
-                <h3>Banho VIP</h3>
-                <p>Uso de águas termais e shampoos premium para o brilho perfeito.</p>
+                <span style="font-size: 40px;">🧼</span>
+                <h3>Banho & Tosa</h3>
+                <p>Produtos hipoalergênicos e profissionais especializados.</p>
             </div>
             <div class="card">
-                <span class="card-icon">✂️</span>
-                <h3>Tosa de Elite</h3>
-                <p>Estética animal com especialistas em todas as raças.</p>
+                <span style="font-size: 40px;">🩺</span>
+                <h3>Veterinário</h3>
+                <p>Consultas de rotina e vacinação em dia para seu pet.</p>
             </div>
             <div class="card">
-                <span class="card-icon">🏨</span>
-                <h3>Hotel Boutique</h3>
-                <p>Quartos monitorados e conforto máximo para hospedagem.</p>
+                <span style="font-size: 40px;">🎾</span>
+                <h3>Day Care</h3>
+                <p>Espaço amplo para diversão e socialização monitorada.</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 40px;">🦴</span>
+                <h3>Lojinha</h3>
+                <p>As melhores rações, brinquedos e acessórios exclusivos.</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p><strong>PurplePet © 2024</strong></p>
-        <p>Transformando o dia dos peludos em uma experiência mágica.</p>
+    <footer id="contato">
+        <p>&copy; 2024 Amigo Peludo PetShop. Todos os direitos reservados.</p>
+        <p>Rua dos Pets, 123 - São Paulo/SP</p>
     </footer>
 
 </body>
