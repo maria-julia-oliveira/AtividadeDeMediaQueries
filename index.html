@@ -3,56 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Rainbow - O Paraíso dos Bichinhos</title>
+    <title>Purple Pet - Estética & Cuidado</title>
     <style>
+        /* Variáveis de Cores (Paleta Roxa) */
         :root {
-            --lilac-bg: #f3f0ff;    /* Roxo bem clarinho */
-            --lilac-soft: #dcd0ff;  /* Lilás pastel */
-            --lilac-dark: #8e44ad;
-            --yellow: #ffd32a;
-            --blue: #34e7e4;
-            --pink: #ffaf40;
-            --white: #ffffff;
+            --primary: #6c5ce7;    /* Roxo Vibrante */
+            --secondary: #a29bfe;  /* Roxo Suave */
+            --dark: #2d3436;       /* Cinza Escuro */
+            --accent: #ef83ff;     /* Rosa/Roxo para Destaque */
+            --bg-light: #f9f8ff;   /* Fundo levemente arroxeado */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
-            background-color: var(--lilac-bg);
-            color: #444;
-            overflow-x: hidden;
+            background-color: var(--bg-light);
+            color: var(--dark);
+            line-height: 1.6;
         }
 
-        /* Topo e Logo */
+        /* Header */
         header {
-            background: var(--white);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--lilac-soft);
+            background-color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--lilac-dark);
-            text-shadow: 2px 2px var(--lilac-soft);
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
-        /* Banner Principal com Fotos */
-        .hero-banner {
+        nav ul {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            padding: 30px 10%;
-            background: white;
+            list-style: none;
         }
 
-        .hero-img {
-            width: 200px;
-            height: 200px
+        nav ul li { margin-left: 25px; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.9), rgba(162, 155, 254, 0.8)), 
+                        url('https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn {
+            background-color: white;
+            color: var(--primary);
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Seção de Serviços */
+        .services {
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            border-bottom: 5px solid var(--secondary);
+            transition: 0.4s;
+            box-shadow: 0 10px 20px rgba(108, 92, 231, 0.05);
+        }
+
+        .card:hover {
+            border-bottom-color: var(--accent);
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        /* --- MEDIA QUERIES --- */
+
+        /* Tablets */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            header { padding: 1.5rem; }
+        }
+
+        /* Celulares */
+        @media (max-width: 480px) {
+            header { flex-direction: column; }
+            nav ul { margin-top: 15px; }
+            nav ul li { margin: 0 10px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero { height: 60vh; }
+            .card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🟣 PurplePet</div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Serviços</a></li>
+                <li><a href="#">Agendar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Carinho Real para o seu Pet</h1>
+        <p style="margin-bottom: 2rem; font-size: 1.2rem;">Onde o bem-estar e a diversão se encontram.</p>
+        <a href="#" class="btn">Conhecer o Spa</a>
+    </section>
+
+    <section class="services">
+        <h2>Nossos Diferenciais</h2>
+        <div class="grid-services">
+            <div class="card">
+                <span class="card-icon">🐕</span>
+                <h3>Banho VIP</h3>
+                <p>Uso de águas termais e shampoos premium para o brilho perfeito.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">✂️</span>
+                <h3>Tosa de Elite</h3>
+                <p>Estética animal com especialistas em todas as raças.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🏨</span>
+                <h3>Hotel Boutique</h3>
+                <p>Quartos monitorados e conforto máximo para hospedagem.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>PurplePet © 2024</strong></p>
+        <p>Transformando o dia dos peludos em uma experiência mágica.</p>
+    </footer>
+
+</body>
+</html>
