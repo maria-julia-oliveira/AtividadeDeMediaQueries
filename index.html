@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amigo Peludo - Pet Shop & Spa</title>
+    <style>
+        /* Configurações Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #ff9f43;
+            --secondary: #54a0ff;
+            --dark: #2f3542;
+            --light: #f1f2f6;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header e Navegação */
+        header {
+            background-color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Serviços */
+        .services {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .services h2 {
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* --- MEDIA QUERIES (Responsividade) --- */
+
+        /* Tablets e Telas Médias */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* Celulares */
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .hero {
+                height: 50vh;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-services {
+                grid-template-columns: 1fr; /* Força uma coluna no celular */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">🐾 Amigo Peludo</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>O melhor cuidado para o seu melhor amigo.</h1>
+        <p style="margin-bottom: 2rem;">Banho, tosa e muito carinho em um só lugar.</p>
+        <a href="#" class="btn">Agendar Horário</a>
+    </section>
+
+    <section class="services" id="servicos">
+        <h2>Nossos Serviços</h2>
+        <div class="grid-services">
+            <div class="card">
+                <span style="font-size: 40px;">🧼</span>
+                <h3>Banho & Tosa</h3>
+                <p>Produtos hipoalergênicos e profissionais especializados.</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 40px;">🩺</span>
+                <h3>Veterinário</h3>
+                <p>Consultas de rotina e vacinação em dia para seu pet.</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 40px;">🎾</span>
+                <h3>Day Care</h3>
+                <p>Espaço amplo para diversão e socialização monitorada.</p>
+            </div>
+            <div class="card">
+                <span style="font-size: 40px;">🦴</span>
+                <h3>Lojinha</h3>
+                <p>As melhores rações, brinquedos e acessórios exclusivos.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <p>&copy; 2024 Amigo Peludo PetShop. Todos os direitos reservados.</p>
+        <p>Rua dos Pets, 123 - São Paulo/SP</p>
+    </footer>
+
+</body>
+</html>
